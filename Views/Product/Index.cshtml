@@ -1,0 +1,83 @@
+﻿@model IEnumerable<MyShop.Models.ProductModel>
+
+@{
+    ViewData["Title"] = "Produktai";
+}
+
+<h1 class="text-center">Produktai</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Sukurti naują</a>
+</p>
+<table class="table table-striped" style="color:black">
+    <thead class="thead thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ForSex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MostWanted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryID)
+            </th>
+            <th style="width:8%"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Brand)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Size)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Color)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StockCount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ForSex)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MostWanted)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryID)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Redaguoti</a>
+                    <a asp-action="Delete" asp-route-id="@item.ID">Ištrinti</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
