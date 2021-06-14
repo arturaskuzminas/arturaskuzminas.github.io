@@ -1,0 +1,186 @@
+﻿@{
+    ViewData["Title"] = "Apie Mus";
+}
+
+<style>
+
+    .center2 {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+    }
+
+    .button2 {
+        display: block;
+        width: 115px;
+        height: 25px;
+        background: #4E9CAF;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        line-height: 25px;
+    }
+
+    .about-section {
+        padding: 10px;
+        text-align: center;
+        background-color: #474e5d;
+        color: white;
+        border-radius: 15px;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Create two equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+        height: 300px; /* Should be removed. Only for demonstration */
+        color: white;
+        border-radius: 10px 0px 0px 10px;
+    }
+
+    .column2 {
+        float: left;
+        width: 50%;
+        padding: 10px;
+        height: 300px; /* Should be removed. Only for demonstration */
+        color: white;
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    /* Clear floats after the columns */
+    .row2:after {
+        content: "";
+        display: table;
+        clear: both;
+        color: white;
+    }
+
+
+    h2 .white-text {
+        color: white;
+    }
+
+    .container {
+        position: relative;
+    }
+
+<<<<<<< Updated upstream
+    blockquote {
+        min-height: 5em;
+        padding: 1em 4em;
+        font: 1em/150% sans-serif;
+        position: relative;
+        background-color: lightgoldenrodyellow;
+    }
+
+        blockquote::before,
+        blockquote::after {
+            position: absolute;
+            height: 3rem;
+            font: 6rem/100% Georgia, "Times New Roman", Times, serif;
+        }
+
+        blockquote::before {
+            content: '“';
+            top: 0.3rem;
+            left: 0.9rem;
+        }
+
+        blockquote::after {
+            content: '”';
+            bottom: 0.3rem;
+            right: 0.8rem;
+        }
+
+        blockquote:lang(fr)::before {
+            content: '«';
+            top: -1.5rem;
+            left: 0.5rem;
+        }
+
+        blockquote:lang(fr)::after {
+            content: '»';
+            bottom: 2.6rem;
+            right: 0.5rem
+        }
+
+        blockquote i {
+            display: block;
+            font-size: 0.8em;
+            margin-top: 1rem;
+            text-align: right;
+        }
+
+
+    div.polaroid {
+        width: 80%;
+        background-color: white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-bottom: 25px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    div.container3 {
+        text-align: center;
+        padding: 10px 20px;
+    }
+
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    .abs-center-x {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+</style>
+
+
+
+
+<div class="about-section" style="border:solid 1px">
+    <h1>Apie projektą</h1>
+</div>
+<br><br>
+
+<div class="row2">
+    <div class="column" style="background-color: #474e5d; ">
+        <h2 class="white-text" color=white;>Mūsų tikslas</h2>
+        <p>Laikas - neįkainojama gyvenimo dalis ir deja dauguma net nepastebi kaip ji greitai prabėga. Mūsų komanda nori padėti kitiems į laiką atkreipti dėmesį. Siūlome Jums savo projektą - kasdieniškas aksesuaras, kuris gali padėti kiekvienam kasdienybėje. </p>
+    </div>
+    <div class="column2" style="        background-color: #404654;">
+        <h2 class="white-text" color=white;>Kokybė svarbiau už kiekį</h2>
+        <p>
+            Dažnu atveju pasiūlome galimybę pasirinkti kainą iš kelių pateikiamų variantų, tačiau darbo kokybės - tik vienas variantas!..
+
+            Todėl pasirinkusiems būtent mus- niekuomet netenka tuom nusivilti, jei žymiai svarbiau ne mažiausia kaina, o esminė vertė: bet kuris laikrodis - kokybės garantija!
+        </p>
+    </div>
+</div>
+
+
+
+<br><br>
+
+<div class="polaroid">
+    <img src="~/images/watch2.jpg" alt="5 Terre" style="width:100%">
+    <div class="container3">
+        <p>Laikrodžių evoliucija</p>
+    </div>
+</div>
+
+<br><br>
+
+
+<a asp-controller="Home" asp-action="Index" class="btn btn-success">Į pagrindinį puslapį</a>
+<a asp-controller="Home" asp-action="Komanda" class="btn btn-success abs-center-x">Apie komandą</a>
+
+
+

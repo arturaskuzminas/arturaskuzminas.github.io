@@ -1,0 +1,92 @@
+﻿@model IEnumerable<MyShop.Models.ProductModel>
+@{
+    ViewData["Title"] = "Komanda";
+}
+<style>
+    .article-box {
+        display: flex;
+        border: 1px solid transparent;
+        box-shadow: rgba(50, 50, 50, 0.74902) 10px 5px 8px -2px;
+    }
+
+        .article-box:hover {
+            border: 1px solid transparent;
+            box-shadow: rgba(50, 50, 50, 0.74902) 13px 8px 18px -2px;
+        }
+
+    .article-image {
+        padding: 3px;
+        border: thick solid black;
+        height: 250px;
+        width: 250px;
+        display: inline-block;
+        float: left;
+    }
+
+    .article-box-text {
+        margin: 20px;
+        height: 250px;
+        width: 450px;
+        background-color: #ffffff;
+        border: 1px solid black;
+        opacity: 0.6;
+        flex: 1;
+    }
+
+        .article-box-text p {
+            margin: 5%;
+            font-weight: bold;
+            color: #000000;
+        }
+
+    .about-section {
+        padding: 10px;
+        text-align: center;
+        background-color: #343a40;
+        color: white;
+        border-radius: 15px;
+    }
+
+    .title-left {
+        display: inline;
+    }
+</style>
+
+<div class="about-section" style="border:solid 1px">
+    <h1>Mūsų Komanda</h1>
+</div>
+<br></br>
+
+<div class="article-list">
+    <div class="article-box">
+        <img class="article-image" src="~/images/photo1.jpg" alt="" width="150" height="150" />
+        <div class="article-box-text">
+            <h4 style="margin-left: 10px">Gintaras Romaneckas</h4>
+            @*<p>Jaunuolis tarp senukų</p>*@
+        </div>
+    </div>
+
+    <br> <br />
+
+    <a class="article-box">
+        <img class="article-image" src="~/images/photo2.jpg" alt="" width="150" height="150" />
+        <div class="article-box-text">
+            <h4 style="margin-left: 10px">Greta Pucilauskaitė</h4>
+            @*<p>4 Semestro veteranė</p>*@
+        </div>
+    </a>
+
+    <br> <br />
+
+    <a class="article-box">
+        <img class="article-image" src="~/images/photo3.jpg" alt="" width="150" height="150" />
+        <div class="article-box-text">
+            <h4 style="margin-left: 10px">Artūras Kuzminas</h4>
+            @*<p>Rožių ir meilės Dievas</p>*@
+        </div>
+    </a>
+</div>
+
+<br></br>
+
+<a asp-controller="Home" asp-action="Index" class="btn btn-success">Į pagrindinį puslapį</a>

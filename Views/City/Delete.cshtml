@@ -1,0 +1,24 @@
+﻿@model MyShop.Models.CityModel
+
+@{
+    ViewData["Title"] = "Ištrinti";
+}
+
+<h3>Ar tikrai norite ištrinti ?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-5">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Ištrinti" class="btn btn-danger" />
+        <a class="btn btn-outline-info" asp-action="Index">Grįžti į sąrašą</a>
+    </form>
+</div>

@@ -1,0 +1,53 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+<style>
+    .modal-backdrop {
+        z-index: 1020;
+    }
+</style>
+<!------------------------------------ Jeigu naudotojas yra adminas tada jis matys tokį navbar'ą ------------------------------------------>
+@if (SignInManager.IsSignedIn(User) && (User.IsInRole("Admin")))
+{
+    <li class="dropdown" style="list-style-type:none">
+        <a class="btn btn-outline-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Valdymas
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/PersonalData" title="Manage">Mano anketa</a>
+            <a class="dropdown-item" asp-controller="Role" asp-action="ListUsers" title="Manage">Naudotojai</a>
+            <a class="dropdown-item" asp-controller="Product" asp-action="Index" title="Manage">Produktai</a>
+            <a class="dropdown-item" asp-controller="Category" asp-action="Index" title="Manage">Prod. kategorijos</a>
+            <a class="dropdown-item" asp-controller="City" asp-action="Index" title="Manage">Miestai</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" asp-area="" asp-controller="Role" asp-action="Index">Rolės</a>
+            <a class="dropdown-item" asp-controller="Role" asp-action="Orders" title="Manage">Užsakymai</a>
+        </div>
+    </li>
+    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+        <button type="submit" class="btn btn-outline-light btn-md my-2 my-sm-0 ml-3">Atsijungti</button>
+    </form>
+}
+// ------------------------------- Jeigu naudotojas yra prisijungęs ir yra paprastas naudotojas tada jis matys tokį navbarą --------------------------------------------
+else if (SignInManager.IsSignedIn(User))
+{
+    <li class="dropdown" style="list-style-type:none">
+        <a class="btn btn-outline-light dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Nustatymai
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/PersonalData" title="Manage">Mano anketa</a>
+            <a class="dropdown-item" asp-controller="History" asp-action="Index">Pirkinių istorija</a>
+        </div>
+    </li>
+
+    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+        <button type="submit" class="btn btn-outline-light btn-md my-2 my-sm-0 ml-3">Atsijungti</button>
+    </form>
+}
+// ------------------------------- Jeigu naudotojas yra neprisijungęs tada jis matys tokį navbarą --------------------------------------------
+else
+{
+    <a class="btn btn-outline-light btn-md my-2 my-sm-0 ml-3" asp-area="Identity" asp-page="/Account/Register">Registruotis</a>
+    <a class="btn btn-outline-light btn-md my-2 my-sm-0 ml-3" asp-area="Identity" asp-page="/Account/Login">Prisijungti</a>
+}

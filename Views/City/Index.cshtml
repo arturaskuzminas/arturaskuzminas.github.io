@@ -1,0 +1,34 @@
+﻿@model IEnumerable<MyShop.Models.CityModel>
+
+@{
+    ViewData["Title"] = "Miestai";
+}
+
+<h1 class="text-center">Miestų sąrašas</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Sukurti naują</a>
+</p>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                Pavadinimas
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Redaguoti</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Ištrinti</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
